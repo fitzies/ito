@@ -1,0 +1,22 @@
+{
+  "name": "ito",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "dev": "bun run --watch src/server.ts"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@supadata/js": "^1.0.4",
+    "elysia": "^1.2.25",
+    "grammy": "^1.35.0",
+    "openai": "^4.87.3",
+    "twitter-api-v2": "^1.20.2",
+    "youtube-transcript": "^1.2.1"
+  }
+}
