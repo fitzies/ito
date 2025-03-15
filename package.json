@@ -6,7 +6,7 @@
     "@types/bun": "latest"
   },
   "scripts": {
-    "dev": "bun run --watch src/server.ts"
+    "dev": "bun run src/index.ts"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

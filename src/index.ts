@@ -102,3 +102,5 @@ export const news = async () => {
   await sendTelegram(tele);
   await tweet(tweetText);
 };
+
+await news();
