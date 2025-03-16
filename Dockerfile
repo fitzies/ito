@@ -2,8 +2,8 @@ FROM oven/bun:1.1.43
 
 WORKDIR /app
 
-# Install OpenSSL 3.0.x explicitly (libssl3 provides libssl.so.3 on Debian)
-RUN apt-get update && apt-get install -y libssl3 && rm -rf /var/lib/apt/lists/*
+# Install OpenSSL 3.0.x (libssl-dev includes libssl.so.3 on Debian)
+RUN apt-get update && apt-get install -y libssl-dev && rm -rf /var/lib/apt/lists/*
 
 # Copy package files first for caching
 COPY package.json bun.lockb ./
