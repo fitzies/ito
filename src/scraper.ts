@@ -73,9 +73,6 @@ async function syncPostsWithDatabase(apiResponse: ApiResponse): Promise<void> {
             content: post.BODY,
             posted: false, // Default value as per schema
             createdAt: new Date(post.CREATED_ON * 1000), // Convert Unix timestamp to Date
-            postedAt: post.PUBLISHED_ON
-              ? new Date(post.PUBLISHED_ON * 1000)
-              : null,
           },
         });
         console.log(`Added new post with ID ${post.ID} to database`);
@@ -88,9 +85,6 @@ async function syncPostsWithDatabase(apiResponse: ApiResponse): Promise<void> {
           data: {
             title: post.TITLE,
             content: post.BODY,
-            postedAt: post.PUBLISHED_ON
-              ? new Date(post.PUBLISHED_ON * 1000)
-              : null,
           },
         });
         console.log(`Updated existing post with ID ${post.ID}`);
