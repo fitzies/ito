@@ -1,31 +1,11 @@
-import { Supadata, type Transcript } from "@supadata/js";
-import OpenAI from "openai";
-import { Bot } from "grammy";
-import { TwitterApi } from "twitter-api-v2";
-
-const apiKey = process.env.YOUTUBE_API_KEY;
-const fireshipChannelId = "UCsBjURrPoezykLs9EqgamOA";
-
-const supadata = new Supadata({
-  apiKey: process.env.SUPADATA_API_KEY!,
-});
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-const bot = new Bot(process.env.TELEGRAM_BOT_API!);
-
-const client = new TwitterApi({
-  //@ts-ignore
-  appKey: process.env.X_API_KEY!,
-  appSecret: process.env.X_API_KEY_SECRET!,
-  accessToken: process.env.X_ACCESS_TOKEN!,
-  accessSecret: process.env.X_ACCESS_TOKEN_SECRET!,
-  bearerToken: process.env.X_BEARER_TOKEN,
-});
+import type { Transcript } from "@supadata/js";
+import { bot, client, openai, supadata } from "./lib/init";
+import { getAndUpdateSource } from "./lib/db";
 
 const getLatestVideoId = async () => {
+  const apiKey = process.env.YOUTUBE_API_KEY;
+  const fireshipChannelId = "UCsBjURrPoezykLs9EqgamOA";
+
   const response = await fetch(
     `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&part=snippet&channelId=${fireshipChannelId}&type=video&maxResults=1&order=date`
   );
@@ -55,7 +35,7 @@ const generate = async (text: string) => {
 
 const getLatestNews = async () => {
   const response = await fetch(
-    "https://data-api.coindesk.com/news/v1/article/list?lang=EN&limit=1&source_ids=coindesk"
+    "https://data-api.coindesk.com/news/v1/article/list?lang=EN&limit=5"
   );
   const data = await response.json();
   return data.Data[0].BODY;
@@ -78,26 +58,31 @@ const tweet = async (text: string) => {
   }
 };
 
-export const youtube = async () => {
-  const videoId = await getLatestVideoId();
-  const transcript = await getTranscript(videoId);
-  const tweetText = await generate(
-    `${transcript}\n\nUse this YouTube transcript and create a tweet about it. Make the tweet about 30 words. use a hashtag if a product/company/etc`
-  );
-  const tele = await generate(
-    `${transcript}\n\nUse this YouTube transcript and give me a 100 word article about it for telegram, dont use any formatting.`
-  );
-  await sendTelegram(tele);
-  await tweet(tweetText);
-};
+// export const youtube = async () => {
+//   const videoId = await getLatestVideoId();
+//   const transcript = await getTranscript(videoId);
+//   const tweetText = await generate(
+//     `${transcript}\n\nUse this YouTube transcript and create a tweet about it. Make the tweet about 30 words. use a hashtag if a product/company/etc`
+//   );
+//   const tele = await generate(
+//     `${transcript}\n\nUse this YouTube transcript and give me a 100 word article about it for telegram, dont use any formatting.`
+//   );
+//   await sendTelegram(tele);
+//   await tweet(tweetText);
+// };
 
 export const news = async () => {
-  const news = await getLatestNews();
+  const source = await getAndUpdateSource();
+  if (!source) {
+    console.log("Error getting source");
+    return;
+  }
+
   const tweetText = await generate(
-    `${news}\n\nUse this news article to create a tweet. Make the tweet about 30 words. use a hashtag if a product/company/etc`
+    `${source.content}\n\nUse this news article to create a tweet. Make the tweet about 30 words. use a hashtag if a product/company/etc`
   );
   const tele = await generate(
-    `${news}\n\nUse this text and give me a 100 word article about it for telegram, dont use any formatting.`
+    `${source.content}\n\nUse this text and give me a 100 word article about it for telegram, dont use any formatting.`
   );
   await sendTelegram(tele);
   await tweet(tweetText);

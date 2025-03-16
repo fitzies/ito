@@ -3,16 +3,20 @@
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "prisma": "6.5.0"
   },
   "scripts": {
-    "dev": "bun run src/index.ts"
+    "dev": "bun run src/index.ts",
+    "scrape": "bun run src/scraper.ts"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@prisma/client": "6.5.0",
     "@supadata/js": "^1.0.4",
+    "axios": "^1.8.3",
     "elysia": "^1.2.25",
     "grammy": "^1.35.0",
     "openai": "^4.87.3",
