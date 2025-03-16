@@ -35,8 +35,7 @@ const generate = async (text: string) => {
 
 const sendTelegram = async (message: string) => {
   const res = await bot.api.sendMessage(-1002481719829, message, {
-    reply_parameters: { message_id: 9 },
-    parse_mode: "MarkdownV2",
+    reply_parameters: { message_id: 9 }
   });
   console.log(res);
 };
@@ -75,7 +74,7 @@ export const news = async () => {
     `${source.content}\n\nUse this news article to create a tweet. Make the tweet about 30 words. use a hashtag if a product/company/etc and include statstics if any.`
   );
   const tele = await generate(
-    `${source.content}\n\nUse this text and give me a 100 word article about it for telegram, use MarkdownV2 for formatting`
+    `${source.content}\n\nUse this text and give me a 100 word article about it for telegram, dont use any formatting.`
   );
   await sendTelegram(tele);
   await tweet(tweetText);
