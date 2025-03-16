@@ -4,17 +4,17 @@
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest",
-    "prisma": "6.5.0"
+    "prisma": "^6.5.0"
   },
   "scripts": {
     "dev": "bun run src/index.ts",
-    "scrape": "bun run src/scraper.ts"
+    "scrape": "bunx prisma generate && bun run src/scraper.ts"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@prisma/client": "6.5.0",
+    "@prisma/client": "^6.5.0",
     "@supadata/js": "^1.0.4",
     "axios": "^1.8.3",
     "elysia": "^1.2.25",
