@@ -33,17 +33,10 @@ const generate = async (text: string) => {
   return response.output_text;
 };
 
-const getLatestNews = async () => {
-  const response = await fetch(
-    "https://data-api.coindesk.com/news/v1/article/list?lang=EN&limit=5"
-  );
-  const data = await response.json();
-  return data.Data[0].BODY;
-};
-
 const sendTelegram = async (message: string) => {
   const res = await bot.api.sendMessage(-1002481719829, message, {
     reply_parameters: { message_id: 9 },
+    parse_mode: "MarkdownV2",
   });
   console.log(res);
 };
@@ -79,10 +72,10 @@ export const news = async () => {
   }
 
   const tweetText = await generate(
-    `${source.content}\n\nUse this news article to create a tweet. Make the tweet about 30 words. use a hashtag if a product/company/etc`
+    `${source.content}\n\nUse this news article to create a tweet. Make the tweet about 30 words. use a hashtag if a product/company/etc and include statstics if any.`
   );
   const tele = await generate(
-    `${source.content}\n\nUse this text and give me a 100 word article about it for telegram, dont use any formatting.`
+    `${source.content}\n\nUse this text and give me a 100 word article about it for telegram, use MarkdownV2 for formatting`
   );
   await sendTelegram(tele);
   await tweet(tweetText);
