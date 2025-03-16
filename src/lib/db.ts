@@ -6,7 +6,7 @@ export const getAndUpdateSource = async (): Promise<Source | null> => {
     return await prisma.$transaction(async (tx) => {
       const source = await tx.source.findFirst({
         where: { posted: false },
-        orderBy: { createdAt: "asc" },
+        orderBy: { createdAt: "desc" }, // Changed from "asc" to "desc" for latest post
       });
 
       if (!source) {
