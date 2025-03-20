@@ -71,7 +71,8 @@ async function syncPostsWithDatabase(apiResponse: ApiResponse): Promise<void> {
             id: post.ID,
             title: post.TITLE,
             content: post.BODY,
-            posted: false, // Default value as per schema
+            messaged: false,
+            tweeted: false,
             createdAt: new Date(post.CREATED_ON * 1000), // Convert Unix timestamp to Date
           },
         });
