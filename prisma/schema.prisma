@@ -21,7 +21,8 @@ model Source {
   title   String
   content String
 
-  posted Boolean @default(false)
+  tweeted  Boolean @default(false)
+  messaged Boolean @default(false)
 
   createdAt DateTime @default(now())
 }
