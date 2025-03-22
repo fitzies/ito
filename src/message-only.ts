@@ -12,7 +12,7 @@ export const sendTelegramOnly = async () => {
   }
 
   const tele = await generate(
-    `${source.content}\n\nUse this text and give me a 50 word article about it for telegram. Use a lot new lines for clearer view. don't use any hashtags.`
+    `${source.content}\n\nUse this text and give me a 50-75 word article about it for telegram. Use a new lines every 1-2 sentences for clearer view. don't use any hashtags.`
   );
   await sendTelegram(tele);
 };
