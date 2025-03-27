@@ -113,6 +113,30 @@ async function fetchPosts(): Promise<ApiResponse> {
   }
 }
 
+const deletePosts = async () => {
+  const fiveDaysAgo = new Date();
+  fiveDaysAgo.setDate(fiveDaysAgo.getDate() - 5);
+
+  const postsToDelete = await prisma.source.findMany({
+    where: {
+      tweeted: true,
+      messaged: true,
+      createdAt: {
+        lt: fiveDaysAgo,
+      },
+    },
+  });
+
+  for (const post of postsToDelete) {
+    await prisma.source.delete({
+      where: {
+        id: post.id,
+      },
+    });
+    console.log(`Deleted post with ID ${post.id}`);
+  }
+};
+
 async function main() {
   try {
     // Fetch posts from API
@@ -120,6 +144,9 @@ async function main() {
 
     // Sync posts with database
     await syncPostsWithDatabase(apiResponse);
+
+    // Delete posts
+    await deletePosts();
 
     console.log("Synchronization process completed");
   } catch (error) {
