@@ -119,8 +119,6 @@ const deletePosts = async () => {
 
   const postsToDelete = await prisma.source.findMany({
     where: {
-      tweeted: true,
-      messaged: true,
       createdAt: {
         lt: fiveDaysAgo,
       },
