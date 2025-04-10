@@ -23,6 +23,7 @@ model Source {
 
   tweeted  Boolean @default(false)
   messaged Boolean @default(false)
+  video    Boolean @default(false)
 
   createdAt DateTime @default(now())
 }

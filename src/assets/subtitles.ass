@@ -1,0 +1,57 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: TikTok,Arial,120,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,6,2,5,10,10,150,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.41,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}yo,
+Dialogue: 0,0:00:00.41,0:00:00.69,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}get
+Dialogue: 0,0:00:00.69,0:00:01.18,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}this!
+Dialogue: 0,0:00:01.18,0:00:01.55,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}trump
+Dialogue: 0,0:00:01.55,0:00:01.88,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}just
+Dialogue: 0,0:00:01.88,0:00:02.29,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}paused
+Dialogue: 0,0:00:02.29,0:00:02.70,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}tariffs
+Dialogue: 0,0:00:02.70,0:00:02.99,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}and
+Dialogue: 0,0:00:02.99,0:00:03.28,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}the
+Dialogue: 0,0:00:03.28,0:00:03.69,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}crypto
+Dialogue: 0,0:00:03.69,0:00:04.10,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}market
+Dialogue: 0,0:00:04.10,0:00:04.42,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}went
+Dialogue: 0,0:00:04.42,0:00:04.92,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}wild!
+Dialogue: 0,0:00:04.92,0:00:05.33,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}bitcoin's
+Dialogue: 0,0:00:05.33,0:00:05.66,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}back
+Dialogue: 0,0:00:05.66,0:00:05.98,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}over
+Dialogue: 0,0:00:05.98,0:00:06.43,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}80k,
+Dialogue: 0,0:00:06.43,0:00:06.72,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}and
+Dialogue: 0,0:00:06.72,0:00:07.01,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}xrp
+Dialogue: 0,0:00:07.01,0:00:07.30,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}and
+Dialogue: 0,0:00:07.30,0:00:07.58,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}eth
+Dialogue: 0,0:00:07.58,0:00:07.87,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}are
+Dialogue: 0,0:00:07.87,0:00:08.28,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}killing
+Dialogue: 0,0:00:08.28,0:00:08.53,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}it
+Dialogue: 0,0:00:08.53,0:00:08.85,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}with
+Dialogue: 0,0:00:08.85,0:00:09.14,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}12%
+Dialogue: 0,0:00:09.14,0:00:09.67,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}gains.
+Dialogue: 0,0:00:09.67,0:00:10.08,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}stocks
+Dialogue: 0,0:00:10.08,0:00:10.49,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}soared
+Dialogue: 0,0:00:10.49,0:00:10.95,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}too,
+Dialogue: 0,0:00:10.95,0:00:11.27,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}best
+Dialogue: 0,0:00:11.27,0:00:11.60,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}jump
+Dialogue: 0,0:00:11.60,0:00:11.97,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}since
+Dialogue: 0,0:00:11.97,0:00:12.46,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}2008!
+Dialogue: 0,0:00:12.46,0:00:12.83,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}could
+Dialogue: 0,0:00:12.83,0:00:13.16,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}this
+Dialogue: 0,0:00:13.16,0:00:13.41,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}be
+Dialogue: 0,0:00:13.41,0:00:13.69,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}the
+Dialogue: 0,0:00:13.69,0:00:14.06,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}start
+Dialogue: 0,0:00:14.06,0:00:14.31,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}of
+Dialogue: 0,0:00:14.31,0:00:14.72,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}better
+Dialogue: 0,0:00:14.72,0:00:15.09,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}trade
+Dialogue: 0,0:00:15.09,0:00:15.62,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}vibes?
+Dialogue: 0,0:00:15.62,0:00:15.95,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}stay
+Dialogue: 0,0:00:15.95,0:00:16.48,TikTok,,0,0,0,,{\move(540,960,540,960)\fscx110\fscy110\t(0,0.15,\fscx100\fscy100)}tuned!

@@ -2,6 +2,9 @@ import { Supadata, type Transcript } from "@supadata/js";
 import OpenAI from "openai";
 import { Bot } from "grammy";
 import { TwitterApi } from "twitter-api-v2";
+import ffmpegInstaller from "@ffmpeg-installer/ffmpeg";
+import ffmpeg from "fluent-ffmpeg";
+import axios from "axios";
 
 export const supadata = new Supadata({
   apiKey: process.env.SUPADATA_API_KEY!,
@@ -21,3 +24,9 @@ export const client = new TwitterApi({
   accessSecret: process.env.X_ACCESS_TOKEN_SECRET!,
   bearerToken: process.env.X_BEARER_TOKEN,
 });
+
+ffmpeg.setFfmpegPath(ffmpegInstaller.path);
+
+const tiktokApiKey = process.env.TIKTOK_API_KEY;
+const tiktokUsername = process.env.TIKTOK_USERNAME;
+const tiktokPassword = process.env.TIKTOK_PASSWORD;

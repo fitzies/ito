@@ -22,6 +22,14 @@
     // Some stricter flags (disabled by default)
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
-  }
+    "noPropertyAccessFromIndexSignature": false,
+
+    // Add baseUrl and paths for better module resolution (optional, but recommended)
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"] // Adjust the path according to your project structure
+    }
+  },
+  "include": ["src"], // Specify the files to be included
+  "exclude": ["node_modules"] // Exclude node_modules
 }
