@@ -1,5 +1,5 @@
 import { getAndUpdateSource } from "./lib/db";
-import { generate, sendTelegram, tweet } from "./lib/utils";
+import { generateText, sendTelegram, postTweet } from "./lib/utils";
 
 export const sendTweet = async () => {
   const source = await getAndUpdateSource(
@@ -11,11 +11,11 @@ export const sendTweet = async () => {
     return;
   }
 
-  const tweetText = await generate(
+  const tweetText = await generateText(
     `${source.content}\n\nUse this news article to create a tweet. Make the tweet about 30 words. use a hashtag if a product/company/etc and include statstics if any.`
   );
 
-  await tweet(tweetText);
+  await postTweet(tweetText);
 };
 
 await sendTweet();
