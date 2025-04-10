@@ -15,7 +15,7 @@ const postVideo = async () => {
     `${source.content}\n\nUse this text and give me a 50 word script for tiktok. Dont use any new lines. Just give me the script.`
   );
 
-  await generateTikTokVideo(script, true);
+  await generateTikTokVideo(script, false);
 };
 
 await postVideo();
