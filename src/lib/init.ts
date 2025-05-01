@@ -24,9 +24,3 @@ export const client = new TwitterApi({
   accessSecret: process.env.X_ACCESS_TOKEN_SECRET!,
   bearerToken: process.env.X_BEARER_TOKEN,
 });
-
-ffmpeg.setFfmpegPath(ffmpegInstaller.path);
-
-const tiktokApiKey = process.env.TIKTOK_API_KEY;
-const tiktokUsername = process.env.TIKTOK_USERNAME;
-const tiktokPassword = process.env.TIKTOK_PASSWORD;
