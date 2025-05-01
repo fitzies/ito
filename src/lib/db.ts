@@ -5,10 +5,12 @@ export const getAndUpdateSource = async (
   where: {
     tweeted?: boolean;
     messaged?: boolean;
+    video?: boolean;
   },
   data: {
     tweeted?: boolean;
     messaged?: boolean;
+    video?: boolean;
   }
 ): Promise<Source | null> => {
   try {

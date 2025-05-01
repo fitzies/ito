@@ -2,8 +2,12 @@ FROM oven/bun:1.1.43
 
 WORKDIR /app
 
-# Install OpenSSL 3.0.x (libssl-dev includes libssl.so.3 on Debian)
-RUN apt-get update && apt-get install -y libssl-dev && rm -rf /var/lib/apt/lists/*
+# Update repositories and install libssl-dev
+RUN echo "deb http://deb.debian.org/debian bullseye main" > /etc/apt/sources.list && \
+  echo "deb http://deb.debian.org/debian-security bullseye-security main" >> /etc/apt/sources.list && \
+  apt-get update -y && \
+  apt-get install -y libssl-dev && \
+  rm -rf /var/lib/apt/lists/*
 
 # Copy package files first for caching
 COPY package.json bun.lockb ./
@@ -15,5 +19,5 @@ COPY . .
 # Generate Prisma client
 RUN bunx prisma generate
 
-# Start the app (replace 'src/index.ts' with your actual entry point)
+# Start the app
 CMD ["bun", "run", "src/index.ts"]
